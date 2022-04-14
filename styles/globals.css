@@ -11,10 +11,10 @@
     @apply mr-3 cursor-pointer whitespace-nowrap hover:underline md:mr-5;
   }
   .inputIcon {
-    @apply flex flex-grow cursor-pointer items-center justify-center 
-    gap-x-1 rounded-xl p-2 transition ease-out hover:bg-gray-100;
+    @apply flex flex-grow cursor-pointer flex-col items-center justify-center gap-x-1 
+    rounded-xl p-2 transition ease-out hover:bg-gray-100 md:flex-row;
   }
   .inputText {
-    @apply text-xs sm:text-sm xl:text-base;
+    @apply whitespace-nowrap text-xs sm:text-sm xl:text-base;
   }
 }

@@ -4,8 +4,8 @@ import React from 'react'
 const SidebarRow = ({ Icon, src, title }) => {
   return (
     <div
-      className="flex cursor-pointer items-center gap-x-2 rounded-md
-    p-4 hover:bg-gray-200"
+      className="flex cursor-pointer items-center justify-center gap-x-2 rounded-md p-4
+    hover:bg-gray-200 sm:justify-start"
     >
       {src && (
         <Image
@@ -16,7 +16,7 @@ const SidebarRow = ({ Icon, src, title }) => {
           className="rounded-full"
         />
       )}
-      {Icon && <Icon className="h-8 w-8 text-blue-500" />}
+      {Icon && <Icon className="h-6 w-6 text-blue-500 md:h-8 md:w-8" />}
       <span className="hidden font-medium sm:inline-flex">{title}</span>
     </div>
   )

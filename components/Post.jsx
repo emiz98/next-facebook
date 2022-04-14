@@ -32,15 +32,15 @@ const Post = ({ id, username, profileImg, message, postImg, timestamp }) => {
       <div className="flex select-none items-center justify-between border-t text-gray-400">
         <div className="inputIcon rounded-bl-2xl">
           <ThumbUpIcon className="h-5 w-5" />
-          <span>Like</span>
+          <span className="text-xs md:text-base">Like</span>
         </div>
         <div className="inputIcon">
           <ChatAltIcon className="h-5 w-5" />
-          <span>Comment</span>
+          <span className="text-xs md:text-base">Comment</span>
         </div>
         <div className="inputIcon rounded-br-2xl">
           <ShareIcon className="h-5 w-5" />
-          <span>Share</span>
+          <span className="text-xs md:text-base">Share</span>
         </div>
       </div>
     </div>

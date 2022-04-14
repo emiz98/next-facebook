@@ -12,11 +12,13 @@ import {
   UsersIcon,
 } from '@heroicons/react/solid'
 
-const Sidebar = () => {
+const Sidebar = ({ isDemo }) => {
   const { data: session } = useSession()
   return (
-    <div className="mt-5 max-w-[600px] p-2 xl:min-w-[300px]">
-      <SidebarRow src={session.user.image} title={session.user.name} />
+    <div className="mt-5 max-w-[600px] p-1 md:p-2 xl:min-w-[300px]">
+      {!isDemo && (
+        <SidebarRow src={session.user.image} title={session.user.name} />
+      )}
       <SidebarRow Icon={UsersIcon} title="Friends" />
       <SidebarRow Icon={UserGroupIcon} title="Groups" />
       <SidebarRow Icon={ShoppingBagIcon} title="Marketplace" />

@@ -7,13 +7,13 @@ const Contact = ({ src, name }) => {
     space-x-3 rounded-xl p-2 hover:bg-gray-200"
     >
       <img
-        className="h-14 w-14 rounded-full"
+        className="h-10 w-10 rounded-full"
         loading="lazy"
         src={src}
         alt="contact"
       />
       <span
-        className="absolute bottom-2 left-9 h-3 w-3 rounded-full
+        className="absolute bottom-2 left-7 h-3 w-3 rounded-full
       border border-white bg-green-400"
       ></span>
       <span className="font-medium">{name}</span>

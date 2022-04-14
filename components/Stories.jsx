@@ -7,11 +7,11 @@ const Stories = () => {
   const [accounts, setAccounts] = useState([])
 
   useEffect(() => {
-    const posts = [...Array(5)].map((_, i) => ({
+    const posts = [...Array(10)].map((_, i) => ({
       ...blaver.helpers.contextualCard(),
       id: i,
     }))
-    const accounts = [...Array(5)].map((_, i) => ({
+    const accounts = [...Array(10)].map((_, i) => ({
       ...blaver.helpers.contextualCard(),
       id: i,
     }))

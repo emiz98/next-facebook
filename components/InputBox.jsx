@@ -62,18 +62,16 @@ const InputBox = () => {
       className="mt-6 rounded-2xl bg-white p-2 
     font-medium text-gray-500 shadow-md"
     >
-      <div className="flex items-center space-x-4 p-4">
-        <Image
-          className="rounded-full"
+      <div className="flex items-center px-2 py-4 md:space-x-4 md:p-4">
+        <img
+          className="hidden h-10 w-10 rounded-full md:inline-flex"
           src={session.user.image}
-          width={40}
-          height={40}
-          layout="fixed"
+          alt="profile"
         />
         <form className="flex flex-1">
           <input
             ref={inputRef}
-            className="h-12 flex-grow rounded-full bg-gray-100 px-5 outline-none"
+            className="h-12 flex-grow rounded-xl bg-gray-100 px-5 outline-none md:rounded-full"
             type="text"
             placeholder={`What's on your mind, ${session.user.name} ?`}
           />
@@ -90,14 +88,14 @@ const InputBox = () => {
 
       <div className="flex justify-evenly border-t p-3">
         <div className="inputIcon">
-          <VideoCameraIcon className="h-7 text-red-500" />
+          <VideoCameraIcon className="h-6 text-red-500 md:h-7" />
           <span className="inputText">Live Video</span>
         </div>
         <div
           onClick={() => filePickerRef.current.click()}
           className="inputIcon"
         >
-          <CameraIcon className="h-7 text-green-500" />
+          <CameraIcon className="h-6 text-green-500 md:h-7" />
           <span className="inputText">Photo/Video</span>
           <input
             ref={filePickerRef}
@@ -107,7 +105,7 @@ const InputBox = () => {
           />
         </div>
         <div className="inputIcon">
-          <EmojiHappyIcon className="h-7 text-yellow-500" />
+          <EmojiHappyIcon className="h-6 text-yellow-500 md:h-7" />
           <span className="inputText">Feeling/Activity</span>
         </div>
       </div>

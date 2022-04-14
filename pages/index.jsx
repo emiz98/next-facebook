@@ -6,18 +6,23 @@ import Welcome from '../components/Welcome'
 import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed'
 import Widgets from '../components/Widgets'
+import { useState } from 'react'
 
 const Home = () => {
-  const isDemo = false
+  const [isDemo, setIsDemo] = useState(false)
   const { data: session, status } = useSession()
 
   return (
-    <div className="h-screen overflow-hidden bg-gray-100">
+    <div
+      className={`${isDemo && 'h-screen'} ${
+        session && 'h-screen'
+      } overflow-hidden bg-gray-100`}
+    >
       <Head>
         <title>Facebook 1.0</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header isDemo={isDemo} />
       {status === 'loading' && (
         <img
           className="mx-auto flex h-[80vh] w-52 justify-center object-contain"
@@ -27,12 +32,14 @@ const Home = () => {
       )}
       {((session && status != 'loading') || isDemo) && (
         <main className="flex">
-          <Sidebar />
-          <Feed />
+          <Sidebar isDemo={isDemo} />
+          <Feed isDemo={isDemo} />
           <Widgets />
         </main>
       )}
-      {!session && status != 'loading' && !isDemo && <Welcome />}
+      {!session && status != 'loading' && !isDemo && (
+        <Welcome setIsDemo={setIsDemo} />
+      )}
       <Footer />
     </div>
   )

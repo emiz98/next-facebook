@@ -16,7 +16,7 @@ import {
   ViewGridIcon,
 } from '@heroicons/react/solid'
 
-const Header = () => {
+const Header = ({ isDemo }) => {
   const { data: session } = useSession()
   return (
     <div
@@ -25,7 +25,7 @@ const Header = () => {
     >
       <div className="flex items-center">
         <Image src={'/favicon.ico'} width={40} height={40} layout="fixed" />
-        {session && (
+        {(session || isDemo) && (
           <div className="ml-2 flex items-center rounded-full bg-gray-100 p-2">
             <SearchIcon className="h-6 text-gray-600" />
             <input
@@ -37,7 +37,7 @@ const Header = () => {
         )}
       </div>
 
-      {session && (
+      {(session || isDemo) && (
         <div className="flex flex-grow items-center justify-center space-x-6 md:space-x-2">
           <HeaderIcon Icon={HomeIcon} active />
           <HeaderIcon Icon={FlagIcon} />
@@ -72,10 +72,14 @@ const Header = () => {
           </span>
         )}
 
-        <ViewGridIcon className="icon" />
-        <ChatIcon className="icon" />
-        <BellIcon className="icon" />
-        <ChevronDownIcon className="icon" />
+        {session && (
+          <>
+            <ViewGridIcon className="icon" />
+            <ChatIcon className="icon" />
+            <BellIcon className="icon" />
+            <ChevronDownIcon className="icon" />
+          </>
+        )}
       </div>
     </div>
   )
