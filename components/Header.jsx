@@ -38,7 +38,7 @@ const Header = ({ isDemo }) => {
       </div>
 
       {(session || isDemo) && (
-        <div className="flex flex-grow items-center justify-center space-x-6 md:space-x-2">
+        <div className="hidden flex-grow items-center justify-center space-x-6 md:flex md:space-x-2">
           <HeaderIcon Icon={HomeIcon} active />
           <HeaderIcon Icon={FlagIcon} />
           <HeaderIcon Icon={PlayIcon} />
