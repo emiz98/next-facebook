@@ -32,7 +32,7 @@ const Footer = () => {
           <span>Careers</span>
         </div>
         <div>Meta © 2022</div>
-        <div className="flex justify-center">
+        <div className="">
           This is not a real app, It is built only for educational purposes
           only.
         </div>

@@ -8,7 +8,7 @@
     transition-all ease-out hover:bg-gray-300 xl:inline-flex;
   }
   .footer > div > div > span {
-    @apply mr-3 cursor-pointer whitespace-nowrap hover:underline md:mr-5;
+    @apply mr-3 cursor-pointer hover:underline md:mr-5;
   }
   .inputIcon {
     @apply flex flex-grow cursor-pointer flex-col items-center justify-center gap-x-1 
